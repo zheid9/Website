@@ -1,0 +1,411 @@
+/* =============== Global =============== */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #1f1f1f;
+  color: #eee;
+}
+
+a {
+  color: #4ea1d3;
+}
+
+/* =============== Simple Button =============== */
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4ea1d3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.button:hover {
+  background: #3a8bb5;
+}
+
+/* =============== Navbar with Soft Blur & Gradient =============== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgb(31, 31, 31), rgb(0, 0, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.navbar .logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =============== Hero =============== */
+#hero {
+  text-align: left;
+  padding-left: 4rem;
+  padding-top: 2rem;
+}
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+#hero .intro {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* =============== Section Styles & Scroll‑Reveal =============== */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.section-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section-heading {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.section-heading h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.underline {
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-left: 1rem;
+}
+.section-text {
+  line-height: 1.6;
+}
+.section-text p,
+.section-text ul {
+  margin-bottom: 1rem;
+}
+
+/* =============== Full‑width Preview Sections =============== */
+.section-preview {
+  grid-column: 1 / -1;
+  overflow: hidden;
+  height: 400px;
+}
+.section-preview iframe {
+  width: 100%;
+  height: 460px;
+  border: none;
+  transform: translateY(-60px);
+}
+.section-container.clickable {
+  cursor: pointer;
+}
+
+/* =============== Contact Section =============== */
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.contact-container p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* =============== Projects Page =============== */
+#projects-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+#projects-page .section-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+#projects-page .section-heading h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+#projects-page .underline {
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-left: 1rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Reveal animation for project cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project card styling + animated reveal */
+.project-card {
+  background: rgba(59, 59, 59, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.project-card h4 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+.project-card p {
+  line-height: 1.6;
+}
+.project-card a {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 0.75rem;
+  color: #4ea1d3;
+  text-decoration: none;
+  font-weight: bold;
+}
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* =============== Overrides for Preview Iframes =============== */
+.section-preview iframe[src*="/hobbies"] {
+  transform: translateY(0);
+  height: 400px;
+}
+.section-preview iframe[src*="/projects?preview"] {
+  transform: translateY(0);
+  height: 400px;
+}
+
+/* Hide top nav/title from hobbies when shown inside homepage preview iframe */
+.section-preview iframe[src*="/hobbies"] {
+  transform: translateY(0); /* adjust based on header height */
+  height: 420px;
+}
+
+#hobbies-page .projects-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+}
+.logo:hover {
+  opacity: 0.85;
+}
+
+/* Click-to-see-more subtitle */
+.click-note {
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin-left: 1rem;
+  color: #aaa;
+}
+
+/* Make preview sections stretch full width */
+#projects-section,
+#hobbies-preview {
+  max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#projects-section .projects-grid,
+#hobbies-preview .projects-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#projects-section,
+#hobbies-preview {
+  display: block;
+  max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#projects-section .projects-grid,
+#hobbies-preview .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.click-note {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.25rem;
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: var(--delay, 0s);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blobs-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.show-more-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.show-more-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #eee;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.show-more-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.about-box {
+  background: rgba(10, 10, 10, 0.6); /* dark semi-transparent background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.section-image-wrapper img {
+  margin-left: 20%;
+  max-width: 300px; /* adjust as needed */
+  height: auto; /* maintain aspect ratio */
+  border-radius: 5px; /* optional for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.custom-instagram-gallery {
+  max-width: 1000px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.contact-bar {
+  background: linear-gradient(to bottom, rgb(31, 31, 31), rgb(0, 0, 0));
+  color: #ccc;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-bar a {
+  color: #4ea1d3;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.contact-bar a:hover {
+  text-decoration: underline;
+}
+
+.photo-nav {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.photo-nav button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.photo-nav button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

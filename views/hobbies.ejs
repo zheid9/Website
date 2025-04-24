@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hobbies – Zach Heidenreich</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <% if (!preview) { %>
+    <nav class="navbar">
+      <a href="/" class="logo">Zach Heidenreich</a>
+      <ul class="nav-links">
+        <li><a href="/#about-section">About</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/hobbies">Hobbies</a></li>
+        <li><a href="/#contact-section">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="projects-page">
+      <div class="section-heading">
+        <h2>Hobbies</h2>
+        <div class="underline"></div>
+      </div>
+      <% } %>
+
+      <div class="projects-grid">
+        <% hobbies.forEach(function(proj, i) { %> <% if (proj.subpage &&
+        proj.subpage.trim() !== "") { %>
+        <a href="<%= proj.subpage %>" class="project-card-link">
+          <div
+            class="project-card"
+            style="--delay: <%= (i * 0.15) .toFixed(2) %>s"
+          >
+            <h3><%= proj.title %></h3>
+            <% if (proj.image) { %>
+            <img
+              src="<%= proj.image %>"
+              alt="<%= proj.title %> image"
+              class="project-image"
+            />
+            <% } %> <% if (proj.subtitle) { %>
+            <h4><%= proj.subtitle %></h4>
+            <% } %>
+            <p><%= proj.description %></p>
+            <% if (proj.link) { %>
+            <a href="<%= proj.link %>" target="_blank" rel="noopener"
+              ><%= proj.linkText %></a
+            >
+            <% } %> <% if (proj.pdf) { %>
+            <a href="<%= proj.pdf %>" target="_blank" rel="noopener"
+              ><%= proj.pdfText %></a
+            >
+            <% } %> <% if (proj.video) { %>
+            <a href="<%= proj.video %>" target="_blank" rel="noopener"
+              ><%= proj.videoText %></a
+            >
+            <% } %>
+          </div>
+        </a>
+        <% } else { %>
+        <div
+          class="project-card"
+          style="--delay: <%= (i * 0.15) .toFixed(2) %>s"
+        >
+          <h3><%= proj.title %></h3>
+          <% if (proj.image) { %>
+          <img
+            src="<%= proj.image %>"
+            alt="<%= proj.title %> image"
+            class="project-image"
+          />
+          <% } %> <% if (proj.subtitle) { %>
+          <h4><%= proj.subtitle %></h4>
+          <% } %>
+          <p><%= proj.description %></p>
+          <% if (proj.link) { %>
+          <a href="<%= proj.link %>" target="_blank" rel="noopener"
+            ><%= proj.linkText %></a
+          >
+          <% } %> <% if (proj.pdf) { %>
+          <a href="<%= proj.pdf %>" target="_blank" rel="noopener"
+            ><%= proj.pdfText %></a
+          >
+          <% } %> <% if (proj.video) { %>
+          <a href="<%= proj.video %>" target="_blank" rel="noopener"
+            ><%= proj.videoText %></a
+          >
+          <% } %>
+        </div>
+        <% }; %> <% }); %>
+      </div>
+
+      <% if (!preview) { %>
+    </section>
+    <% } %>
+  </body>
+  <footer class="contact-bar">
+    <p>
+      Zach Heidenreich |
+      <a href="mailto:zach@gatech.edu">zach@gatech.edu</a> |
+      <a
+        href="https://www.linkedin.com/in/zheid/"
+        target="_blank"
+        rel="noopener"
+        >LinkedIn</a
+      >
+    </p>
+  </footer>
+</html>
