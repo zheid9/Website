@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-scroll">
   <head>
     <meta charset="UTF-8" />
     <title>Zach Heidenreich</title>
     <link rel="stylesheet" href="/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/blobs.css" />
   </head>
 
-  <script src="/js/blobs.js"></script>
+  <!--<script src="/js/blobs.js"></script> -->
+  <script src="/js/name.js"></script>
 
   <body>
-    <canvas class="blobs-canvas"></canvas>
-
+    <!-- <canvas class="blobs-canvas"></canvas> -->
     <!-- Navbar -->
     <nav class="navbar">
       <a href="/" class="logo">Zach Heidenreich</a>
@@ -23,16 +22,13 @@
         <li><a href="/#contact-section">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- Hero -->
-    <section id="hero">
-      <h1>Zach Heidenreich</h1>
-    </section>
-
+    <div class="binary-background"></div>
+    <script src="/js/binary.js"></script>
     <!-- About -->
     <section id="about-section" class="section-container">
       <div class="section-heading"></div>
       <div class="-box">
+        <div class="name-heading" id="name">Zach Heidenreich</div>
         <p>
           Hi—I’m Zach, a junior in the ECE program at Georgia Tech. I love
           building hardware and software end to end—whether it’s designing a PCB
@@ -50,10 +46,15 @@
         </a>
       </div>
       <div class="section-image-wrapper">
-        <img src="/images/mugshot.png" alt="Zach Heidenreich" />
+        <img
+          class="solid-background"
+          src="/images/mugshot.png"
+          alt="Zach Heidenreich"
+        />
       </div>
     </section>
   </body>
+
   <footer class="contact-bar">
     <p>
       Zach Heidenreich |

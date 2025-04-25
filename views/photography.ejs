@@ -15,6 +15,8 @@
   </script>
 
   <body>
+    <div class="binary-background"></div>
+    <script src="/js/binary.js"></script>
     <nav class="navbar">
       <a href="/" class="logo">Zach Heidenreich</a>
       <ul class="nav-links">
@@ -28,10 +30,16 @@
 
   <main>
     <div class="photo-nav">
-      <button onclick="loadFeed('113499e3ba105414a79f9a3966315933')">
+      <button
+        class="button"
+        onclick="loadFeed('113499e3ba105414a79f9a3966315933')"
+      >
         All
       </button>
-      <button onclick="loadFeed('25775c0d9be3547c8a7f83f778887d0c')">
+      <button
+        class="button"
+        onclick="loadFeed('25775c0d9be3547c8a7f83f778887d0c')"
+      >
         Astrophography
       </button>
     </div>
@@ -42,7 +50,7 @@
         src="//lightwidget.com/widgets/113499e3ba105414a79f9a3966315933.html"
         scrolling="no"
         allowtransparency="true"
-        class="lightwidget-widget"
+        class="lightwidget-widget, solid-background"
         style="width: 100%; border: 0; overflow: hidden"
       ></iframe>
       <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>

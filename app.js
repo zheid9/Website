@@ -61,11 +61,11 @@ const hobbies = [
     subpage: "",
   },
   {
-    title: "Random",
+    title: "Beat Saber",
     subtitle: "",
-    description: "Coming soon...",
-    image: "/images/youtube.jpg",
-    subpage: "",
+    description: "Click to see some of my best beat saber maps",
+    image: "/images/Beat-Saber.png",
+    subpage: "/beat-saber",
   },
 ];
 
@@ -87,6 +87,9 @@ app.get("/contact", (req, res) => res.redirect("/#contact-bar"));
 // Get hobby subpages
 app.get("/photography", (req, res) => {
   res.render("photography");
+});
+app.get("/beat-saber", (req, res) => {
+  res.render("beat-saber");
 });
 
 const PORT = process.env.PORT || 3000;
