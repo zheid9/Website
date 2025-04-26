@@ -360,11 +360,13 @@ a {
 
 .custom-instagram-gallery {
   max-width: 1000px;
-  margin: 2rem auto;
+  margin: auto;
+  margin-bottom: 10rem;
   border-radius: 12px;
   overflow: hidden;
   z-index: 5;
   opacity: 1;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.7);
 }
 
 .contact-bar {
@@ -385,7 +387,7 @@ a {
   color: #4ea1d3;
   text-decoration: none;
   margin: 0 0.5rem;
-  z-index: 100;
+  z-index: 1000;
   pointer-events: all;
 }
 
@@ -499,7 +501,7 @@ a {
 
 /*Youtube player*/
 .video-carousel {
-  padding-top: 100px;
+  padding-top: 7rem;
   overflow: hidden;
   width: 100%;
   display: flex;
@@ -533,7 +535,7 @@ a {
 .video-slide.active {
   width: 560px;
   padding-right: 0px;
-  transform: scale(1.1);
+  transform: scale(1.25);
   opacity: 1;
 }
 
